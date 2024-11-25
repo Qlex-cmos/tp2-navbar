@@ -45,4 +45,44 @@ let data = [
   },
 ];
 
-console.log(data[2].pseudo);
+// console.log(data[2].pseudo);
+
+//---------------------------
+// Les structures de contrôle
+//---------------------------
+
+// if (data[0].age > data[1].age) {
+//   console.log(data[0].pseudo + " est plus âgé que " + data[1].pseudo);
+// } else {
+//   //valeur si faux
+// }
+
+// if(valeur à tester) valeur si vrai // quand ça tient sur une ligne
+
+// valeur à tester ? si vrai : si faux -> *** structure ternaire ***
+
+// WHILE
+let w = 0;
+
+// while (w < 10) {
+//   w++;
+//   console.log("La valeur de w est de : " + w);
+// }
+
+// DO WHILE
+// let d = 0;
+
+// do {
+//   d++;
+//   console.log(d);
+// } while (d < 5);
+
+// LES BOUCLES FOR
+// for (const user of data) {
+//   document.body.innerHTML += `<li>${user.pseudo} - ${user.age} ans</li>`;
+// }
+
+console.log(data.length);
+
+// for (i=0; i< data.length)
+//37:17
