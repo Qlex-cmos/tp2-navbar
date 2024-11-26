@@ -82,7 +82,33 @@ let w = 0;
 //   document.body.innerHTML += `<li>${user.pseudo} - ${user.age} ans</li>`;
 // }
 
-console.log(data.length);
+// console.log(data.length);
 
-// for (i=0; i< data.length)
-//37:17
+// for (i = 0; i < data.length; i++) {
+//   // console.log(i);
+//   // console.log(data[i].technos[2]);
+//   document.body.innerHTML += "<h2>" + data[i].pseudo + "</h2>";
+// }
+
+document.body.addEventListener("click", (e) => {
+  console.log(e.target.id);
+
+  // if (e.target.id === "JS") {
+  //   document.body.style.background = "yellow";
+  // }
+
+  // *********** SWITCH *****************
+  switch (e.target.id) {
+    case "JS":
+      document.body.style.background = "yellow";
+      break;
+    case "php":
+      document.body.style.background = "violet";
+      break;
+    case "python":
+      document.body.style.background = "blue";
+      break;
+    default:
+      null;
+  }
+});
