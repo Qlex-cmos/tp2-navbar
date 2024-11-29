@@ -91,7 +91,7 @@ let w = 0;
 // }
 
 document.body.addEventListener("click", (e) => {
-  console.log(e.target.id);
+  // console.log(e.target.id);
 
   // if (e.target.id === "JS") {
   //   document.body.style.background = "yellow";
@@ -112,3 +112,46 @@ document.body.addEventListener("click", (e) => {
       null;
   }
 });
+
+// ******  METHODES STRINGS  *******
+let string2 = "Javascript est un langage orienté Objet";
+// console.log(typeof string2);
+// console.log(eval("1" + 2));
+// console.log(eval(parseInt("1") + 2));
+// console.log(isNaN(string2));
+
+// console.log(string2.length);
+// console.log(string2[string2.length - 1]);
+
+// console.log(string2.indexOf("langage")); // retourne -1 s'il ne le connaît pas
+
+// let newString = string2.slice(2);
+// let newString = string2.slice(5, 17);
+// console.log(newString);
+
+// console.log(string2.split("i"));
+
+// console.log(string2.toLocaleLowerCase());
+// console.log(string2.toLocaleUpperCase());
+
+// console.log(string2.replace("Javascript", "PHP"));
+
+// ******* METHODES NUMBERS ************
+let number2 = 42.1234;
+let numberString = "42.12 est un nombre";
+
+// console.log(number2.toFixed(2));
+// console.log(parseInt("43"));
+// console.log(parseInt(numberString));
+// console.log(parseFloat(numberString));
+
+// MATH
+console.log(Math.PI);
+console.log(Math.round(4.5)); // arrondi à l'entier le plus proche
+console.log(Math.floor(4.9)); // arrondi à l'entier inférieur
+console.log(Math.ceil(4.1)); // arrondi à l'entier supérieur
+console.log(Math.pow(2, 7)); // puissance
+console.log(Math.sqrt(16)); // racine carrée
+console.log(Math.floor(Math.random() * 100)); // Math.random() produit un chiffre aléatoirement entre 0 et 1
+
+// 01:31:43
