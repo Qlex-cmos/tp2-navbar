@@ -195,3 +195,33 @@ let newArray = array3.concat(array4);
 // méthode "splice"
 // const restArray = array3.splice(0, 2, "c++");
 // console.log(array3);
+
+//********* IMPORTANT *********//
+// méthode  "reduce", pour appliquer une opération arithmétique à des éléments d'un tableau
+let arrayNumber = [4, 74, 28, 12, 1];
+// console.log(arrayNumber.reduce((x, y) => x + y));
+
+// Méthode "push", ajouter des éléments à un tableau
+// arrayNumber.push(17);
+// console.log(arrayNumber);
+
+// FILTER (pour filtrer), SORT (pour trier), MAP (pour lister, mapper)
+// console.log(arrayNumber.filter((number) => number > 10));
+// console.log(arrayNumber.sort());
+// Trier par ordre décroissant
+// console.log(arrayNumber.sort((a, b) => b - a));
+// Trier par ordre croissant
+// console.log(arrayNumber.sort((a, b) => a - b));
+// En utilisant plusieurs méthodes de tri à la fois
+// console.log(arrayNumber.filter((number) => number > 10).sort((a, b) => a - b));
+// console.log(arrayNumber.filter((number) => number > 10).sort((a, b) => b - a));
+
+// arrayNumber.map((number) => console.log(number));
+// arrayNumber.map((number) => (document.body.innerHTML += `<li> ${number}</li>`));
+// document.body.innerHTML = arrayNumber.map((number) => `<li> ${number}</li>`);
+// document.body.innerHTML = arrayNumber
+//   .map((number) => `<li> ${number}</li>`)
+//   .join("");
+
+//******* METHODES OBJET ******//
+//02:01:44
