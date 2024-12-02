@@ -146,12 +146,52 @@ let numberString = "42.12 est un nombre";
 // console.log(parseFloat(numberString));
 
 // MATH
-console.log(Math.PI);
-console.log(Math.round(4.5)); // arrondi à l'entier le plus proche
-console.log(Math.floor(4.9)); // arrondi à l'entier inférieur
-console.log(Math.ceil(4.1)); // arrondi à l'entier supérieur
-console.log(Math.pow(2, 7)); // puissance
-console.log(Math.sqrt(16)); // racine carrée
-console.log(Math.floor(Math.random() * 100)); // Math.random() produit un chiffre aléatoirement entre 0 et 1
+// console.log(Math.PI);
+// console.log(Math.round(4.5)); // arrondi à l'entier le plus proche
+// console.log(Math.floor(4.9)); // arrondi à l'entier inférieur
+// console.log(Math.ceil(4.1)); // arrondi à l'entier supérieur
+// console.log(Math.pow(2, 7)); // puissance
+// console.log(Math.sqrt(16)); // racine carrée
+// console.log(Math.floor(Math.random() * 100)); // Math.random() produit un chiffre aléatoirement entre 0 et 1
 
-// 01:31:43
+// ******* METHODES ARRAYS ************
+let array3 = ["Javascript", "React", "NodeJs"];
+let array4 = ["Ruby", "Solidity"];
+
+let newArray = array3.concat(array4);
+// console.log(newArray);
+
+// ...= "spread operator", permet de développer le tableau
+// let newArray = [...array3, ...array4];
+// console.log(newArray);
+
+// Méthode "join"
+// console.log(array3.join("-"));
+
+// Méthode "Slice"
+// console.log(array3.slice(1));
+// console.log(newArray);
+// console.log(newArray.slice(2, 5));
+
+// Méthode "indexOf"
+// console.log(array3.indexOf("React"));
+
+// ForEach
+// array3.forEach((languages) => console.log(languages));
+
+// Méthodes "every" et "some"
+// console.log(array3.every((language) => language == "React"));
+// console.log(array3.some((language) => language == "React"));
+
+// méthode "shift" , retire le premier index du tableau
+// let shift = array3.shift();
+// console.log(shift);
+// console.log(array3);
+
+// méthode "pop", retire le dernier élément
+// console.log(array3.pop());
+// console.log(array3);
+
+// méthode "splice"
+// const restArray = array3.splice(0, 2, "c++");
+// console.log(array3);
