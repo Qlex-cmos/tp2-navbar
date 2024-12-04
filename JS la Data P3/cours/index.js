@@ -224,4 +224,14 @@ let arrayNumber = [4, 74, 28, 12, 1];
 //   .join("");
 
 //******* METHODES OBJET ******//
-//02:01:44
+document.body.innerHTML = data
+  .map(
+    (user) =>
+      `
+  <div class="user-card">
+    <h2>${user.pseudo}</h2>
+    <p>Age : ${user.age} ans</p>
+  </div>
+`
+  )
+  .join("");
