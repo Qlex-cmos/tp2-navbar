@@ -225,12 +225,16 @@ let arrayNumber = [4, 74, 28, 12, 1];
 
 //******* METHODES OBJET ******//
 document.body.innerHTML = data
+  // .filter((user) => user.admin === false)
+  .filter((user) => user.pseudo.includes("i"))
+  .sort((a, b) => b.age - a.age)
   .map(
     (user) =>
       `
   <div class="user-card">
     <h2>${user.pseudo}</h2>
     <p>Age : ${user.age} ans</p>
+    <p>Status : ${user.admin ? "Moderateur" : "Membre"}</p>
   </div>
 `
   )
