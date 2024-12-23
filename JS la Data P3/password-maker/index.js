@@ -30,6 +30,13 @@ const generatePassword = () => {
     // console.log(password);
   }
   passwordOutput.value = password; // dans un input (ici passwordOutput -> voir index.html), on ne peut pas mettre de "texContent" ou de l"innerHtml"
+  passwordOutput.select();
+  document.execCommand("copy");
+  generateButton.textContent = "Copié!";
+
+  setTimeout(() => {
+    generateButton.textContent = "Générer mot de passe";
+  }, 2000);
 };
 
 generateButton.addEventListener("click", () => {
