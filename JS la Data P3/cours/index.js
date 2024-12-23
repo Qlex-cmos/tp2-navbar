@@ -224,18 +224,47 @@ let arrayNumber = [4, 74, 28, 12, 1];
 //   .join("");
 
 //******* METHODES OBJET ******//
-document.body.innerHTML = data
-  // .filter((user) => user.admin === false)
-  .filter((user) => user.pseudo.includes("i"))
-  .sort((a, b) => b.age - a.age)
-  .map(
-    (user) =>
-      `
-  <div class="user-card">
-    <h2>${user.pseudo}</h2>
-    <p>Age : ${user.age} ans</p>
-    <p>Status : ${user.admin ? "Moderateur" : "Membre"}</p>
-  </div>
-`
-  )
-  .join("");
+// document.body.innerHTML = data
+//   // .filter((user) => user.admin === false)
+//   .filter((user) => user.pseudo.includes("i"))
+//   .sort((a, b) => b.age - a.age)
+//   .map(
+//     (user) =>
+//       `
+//   <div class="user-card">
+//     <h2>${user.pseudo}</h2>
+//     <p>Age : ${user.age} ans</p>
+//     <p>Status : ${user.admin ? "Moderateur" : "Membre"}</p>
+//   </div>
+// `
+//   )
+//   .join("");
+
+// *** LES DATES *** //
+
+// Dates Classiques
+let date = new Date();
+
+// Timestamp
+let timestamp = Date.parse(date);
+console.log(timestamp);
+
+// IsoString
+let iso = date.toISOString();
+console.log(date.toISOString());
+
+function dateParser(chaine) {
+  let newDate = new Date(chaine).toLocaleDateString("fr-FR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  });
+  return newDate;
+}
+
+console.log(dateParser(date));
+console.log(dateParser(timestamp));
+console.log(dateParser(iso));

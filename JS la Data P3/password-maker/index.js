@@ -31,7 +31,8 @@ const generatePassword = () => {
   }
   passwordOutput.value = password; // dans un input (ici passwordOutput -> voir index.html), on ne peut pas mettre de "texContent" ou de l"innerHtml"
   passwordOutput.select();
-  document.execCommand("copy");
+  // document.execCommand("copy"); déprécié!!
+  navigator.clipboard.writeText(passwordOutput.value);
   generateButton.textContent = "Copié!";
 
   setTimeout(() => {
