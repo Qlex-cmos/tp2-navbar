@@ -339,3 +339,20 @@ let mail = "from_scratch33@gmail.com";
 // console.log(mail.search(/from/));
 
 // console.log(mail.replace(/from/, "de"));
+// console.log(mail.match(/SCratch/i));
+// console.log(mail.match(/[\W]/));
+// console.log(mail.match(/[123]/));
+
+// Tous les chiffres
+// console.log(mail.match(/[\d]/));
+
+// Matcher toutes les lettres
+// console.log(mail.match(/[a-z]/));
+// console.log(mail.match(/[A-Z]/));
+
+console.log(mail.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i)); // on met un backslash pour échapper le point "."
+
+let separator = 24662863256;
+
+// Regex utilisée pour faire un séparateur de milliers
+console.log(separator.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
