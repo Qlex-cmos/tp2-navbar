@@ -47,9 +47,9 @@ let data = [
 
 // console.log(data[2].pseudo);
 
-//---------------------------
+//////////////////////////////
 // Les structures de contrôle
-//---------------------------
+/////////////////////////////
 
 // if (data[0].age > data[1].age) {
 //   console.log(data[0].pseudo + " est plus âgé que " + data[1].pseudo);
@@ -97,7 +97,10 @@ document.body.addEventListener("click", (e) => {
   //   document.body.style.background = "yellow";
   // }
 
+  ///////////////////////////////////////
   // *********** SWITCH *****************
+  ///////////////////////////////////////
+
   switch (e.target.id) {
     case "JS":
       document.body.style.background = "yellow";
@@ -113,7 +116,10 @@ document.body.addEventListener("click", (e) => {
   }
 });
 
+////////////////////////////////////
 // ******  METHODES STRINGS  *******
+////////////////////////////////////
+
 let string2 = "Javascript est un langage orienté Objet";
 // console.log(typeof string2);
 // console.log(eval("1" + 2));
@@ -136,7 +142,10 @@ let string2 = "Javascript est un langage orienté Objet";
 
 // console.log(string2.replace("Javascript", "PHP"));
 
+////////////////////////////////////////
 // ******* METHODES NUMBERS ************
+////////////////////////////////////////
+
 let number2 = 42.1234;
 let numberString = "42.12 est un nombre";
 
@@ -154,7 +163,10 @@ let numberString = "42.12 est un nombre";
 // console.log(Math.sqrt(16)); // racine carrée
 // console.log(Math.floor(Math.random() * 100)); // Math.random() produit un chiffre aléatoirement entre 0 et 1
 
+///////////////////////////////////////
 // ******* METHODES ARRAYS ************
+///////////////////////////////////////
+
 let array3 = ["Javascript", "React", "NodeJs"];
 let array4 = ["Ruby", "Solidity"];
 
@@ -196,7 +208,10 @@ let newArray = array3.concat(array4);
 // const restArray = array3.splice(0, 2, "c++");
 // console.log(array3);
 
+/////////////////////////////////
 //********* IMPORTANT *********//
+/////////////////////////////////
+
 // méthode  "reduce", pour appliquer une opération arithmétique à des éléments d'un tableau
 let arrayNumber = [4, 74, 28, 12, 1];
 // console.log(arrayNumber.reduce((x, y) => x + y));
@@ -223,7 +238,10 @@ let arrayNumber = [4, 74, 28, 12, 1];
 //   .map((number) => `<li> ${number}</li>`)
 //   .join("");
 
+/////////////////////////////////
 //******* METHODES OBJET ******//
+/////////////////////////////////
+
 // document.body.innerHTML = data
 //   // .filter((user) => user.admin === false)
 //   .filter((user) => user.pseudo.includes("i"))
@@ -240,31 +258,84 @@ let arrayNumber = [4, 74, 28, 12, 1];
 //   )
 //   .join("");
 
+////////////////////////
 // *** LES DATES *** //
+///////////////////////
 
 // Dates Classiques
 let date = new Date();
 
-// Timestamp
-let timestamp = Date.parse(date);
-console.log(timestamp);
+// // Timestamp
+// let timestamp = Date.parse(date);
+// console.log(timestamp);
 
-// IsoString
+// // IsoString
 let iso = date.toISOString();
-console.log(date.toISOString());
+// console.log(date.toISOString());
 
-function dateParser(chaine) {
-  let newDate = new Date(chaine).toLocaleDateString("fr-FR", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
-  });
-  return newDate;
-}
+// function dateParser(chaine) {
+//   let newDate = new Date(chaine).toLocaleDateString("fr-FR", {
+//     year: "numeric",
+//     month: "long",
+//     day: "numeric",
+//     hour: "numeric",
+//     minute: "numeric",
+//     second: "numeric",
+//   });
+//   return newDate;
+// }
 
-console.log(dateParser(date));
-console.log(dateParser(timestamp));
-console.log(dateParser(iso));
+// console.log(dateParser(date));
+// console.log(dateParser(timestamp));
+// console.log(dateParser(iso));
+
+////////////////////////////////
+// *** LE DESTRUCTURING *** //
+///////////////////////////////
+let moreData = {
+  destVar: ["Element 1", "Element 2"],
+};
+
+const { destVar } = moreData;
+// = const destVar = moreData.destVar
+// destructuring
+
+// console.log(moreData.destVar);
+// console.log(destVar);
+
+let array5 = [70, 80, 90];
+// console.log(array5[0]);
+// console.log(array5[1]);
+// console.log(array5[2]);
+let [x, y, z] = array5;
+// console.log(x, y, z);
+
+// console.log(iso);
+const dataDestructuring = (chaine) => {
+  let newDate = chaine.split("T")[0];
+  let [y, m, d] = newDate.split("-");
+  return [d, m, y].join("/");
+};
+// console.log(dataDestructuring(iso));
+
+// "Join" est l'inverse de "Split"
+
+////////////////////////////////
+// *** LES DATASETS *** //
+///////////////////////////////
+
+// const h3js = document.getElementById("JS");
+// console.log(h3js.dataset.lang);
+
+// const h3 = document.querySelectorAll("h3");
+// h3.forEach((langage) => {
+//   console.log(langage.dataset.lang);
+// });
+
+////////////////////////////////
+// *** LES REGEX*** //
+///////////////////////////////
+let mail = "from_scratch33@gmail.com";
+// console.log(mail.search(/from/));
+
+// console.log(mail.replace(/from/, "de"));
