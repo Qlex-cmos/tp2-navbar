@@ -2,9 +2,14 @@ const inputs = document.querySelectorAll(
   'input[type="text"], input[type="password"]'
 );
 
+const errorDisplay = (tag, message, valid) => {
+  const container = document.querySelector("." + tag + "-container");
+  const span = document.querySelector("." + tag + "-container > span");
+};
+
 const pseudoChecker = (value) => {
-  const pseudoContainer = document.querySelector(".pseudo-container");
-  const errorDisplay = document.querySelector(".pseudo-container > span");
+  // const pseudoContainer = document.querySelector(".pseudo-container");
+  // const errorDisplay = document.querySelector(".pseudo-container > span");
 
   if (value.length > 0 && (value.length < 3 || value.length > 20)) {
     pseudoContainer.classList.add("error");
