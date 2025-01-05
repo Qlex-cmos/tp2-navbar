@@ -2,9 +2,19 @@ const inputs = document.querySelectorAll(
   'input[type="text"], input[type="password"]'
 );
 
+let pseudo, email, password, confirmPass;
+
 const errorDisplay = (tag, message, valid) => {
   const container = document.querySelector("." + tag + "-container");
   const span = document.querySelector("." + tag + "-container > span");
+
+  if (!valid) {
+    container.classList.add("error");
+    span.textContent = message;
+  } else {
+    container.classList.remove("error");
+    span.textContent = message;
+  }
 };
 
 const pseudoChecker = (value) => {
@@ -12,20 +22,35 @@ const pseudoChecker = (value) => {
   // const errorDisplay = document.querySelector(".pseudo-container > span");
 
   if (value.length > 0 && (value.length < 3 || value.length > 20)) {
-    pseudoContainer.classList.add("error");
-    errorDisplay.textContent = "Le pseudo doit faire entre 3 et 20 caractères";
+    // pseudoContainer.classList.add("error");
+    // errorDisplay.textContent = "Le pseudo doit faire entre 3 et 20 caractères";
+    errorDisplay("pseudo", "Le pseudo doit faire entre 3 et 20 caractères");
+    pseudo = null;
   } else if (!value.match(/^[a-zA-Z0-9_.-]*$/)) {
-    pseudoContainer.classList.add("error");
-    errorDisplay.textContent =
-      "Le pseudo ne peut pas contenir de caractères spéciaux";
+    // pseudoContainer.classList.add("error");
+    // errorDisplay.textContent =
+    //   "Le pseudo ne peut pas contenir de caractères spéciaux";
+    errorDisplay(
+      "pseudo",
+      "Le pseudo ne doit pas contenir de caractères spéciaux"
+    );
+    pseudo = null;
   } else {
-    pseudoContainer.classList.remove("error");
-    errorDisplay.textContent = "";
+    // pseudoContainer.classList.remove("error");
+    // errorDisplay.textContent = "";
+    errorDisplay("pseudo", "", true);
+    pseudo = value;
   }
 };
 
 const emailChecker = (value) => {
-  console.log(value);
+  if (!value.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i)) {
+    errorDisplay("email", "Le mail n'est pas valide");
+    email = null;
+  } else {
+    errorDisplay("email", "", true);
+    email = value;
+  }
 };
 
 const passwordChecker = (value) => {
@@ -58,4 +83,4 @@ inputs.forEach((input) => {
   });
 });
 
-// 03:53:55
+// 04:07:19
