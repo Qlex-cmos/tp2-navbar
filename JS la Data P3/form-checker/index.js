@@ -2,6 +2,7 @@ const inputs = document.querySelectorAll(
   'input[type="text"], input[type="password"]'
 );
 
+const progressBar = document.getElementById("progress-bar");
 let pseudo, email, password, confirmPass;
 
 const errorDisplay = (tag, message, valid) => {
@@ -54,11 +55,41 @@ const emailChecker = (value) => {
 };
 
 const passwordChecker = (value) => {
-  console.log(value);
+  // console.log(value);
+  progressBar.classList = ""; // pour éviter que les classes ProgressBar s'empilent
+  if (
+    !value.match(
+      /^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$/
+    )
+  ) {
+    // console.log("test");
+    errorDisplay(
+      "password",
+      "Minimum de 8 caractères, 1 majuscule, 1 chiffre et 1 caractère spécial"
+    );
+    progressBar.classList.add("progressRed");
+    password = null;
+  } else if (value.length < 12) {
+    progressBar.classList.add("progressBlue");
+    errorDisplay("password", "", true);
+    password = value;
+  } else {
+    progressBar.classList.add("progressGreen");
+    errorDisplay("password", "", true);
+    password = value;
+  }
 };
 
 const confirmChecker = (value) => {
-  console.log(value);
+  // console.log(value);
+  if (value !== password) {
+    // console.log("error");
+    errorDisplay("confirm", "les mots de passe ne correspondent pas");
+    confirmPass = false;
+  } else {
+    errorDisplay("confirm", "", true);
+    confirmPass = true;
+  }
 };
 
 inputs.forEach((input) => {
