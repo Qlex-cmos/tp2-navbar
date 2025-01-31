@@ -1,3 +1,4 @@
+const form = document.querySelector("form");
 const inputs = document.querySelectorAll(
   'input[type="text"], input[type="password"]'
 );
@@ -78,6 +79,7 @@ const passwordChecker = (value) => {
     errorDisplay("password", "", true);
     password = value;
   }
+  if (confirmPass) confirmChecker(confirmPass);
 };
 
 const confirmChecker = (value) => {
@@ -114,4 +116,28 @@ inputs.forEach((input) => {
   });
 });
 
-// 04:07:19
+form.addEventListener("submit", (e) => {
+  // console.log("test");
+  e.preventDefault();
+
+  if (pseudo && email && password && confirmPass) {
+    // if(pseudo) signifie pseudo est true
+    const data = {
+      pseudo: pseudo,
+      email: email,
+      password: password,
+    };
+    console.log(data);
+
+    inputs.forEach((input) => (input.value = ""));
+    progressBar.classList = "";
+
+    pseudo = null;
+    email = null;
+    password = null;
+    confirmPass = null;
+    alert("Inscription validée");
+  } else {
+    alert("Veuillez remplir correctement les champs");
+  }
+});
