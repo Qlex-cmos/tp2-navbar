@@ -1,0 +1,17 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "html.format.wrapLineLength": 50,
+    "editor.wrappingIndent": "none",
+    "editor.wordWrap": "on",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.formatOnSave": true,
+    "files.autoSave": "onWindowChange",
+    "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+  }
+  
