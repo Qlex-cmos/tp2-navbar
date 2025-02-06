@@ -1,5 +1,16 @@
 {
-    "posts": [
-        
-    ]
+  "posts": [
+    {
+      "id": "8ecc",
+      "pseudo": "Alex",
+      "message": "Coucou!"
+    }
+  ],
+  "users": [
+    {
+      "id": "dd59",
+      "pseudo": "Alex",
+      "age": 42
+    }
+  ]
 }
