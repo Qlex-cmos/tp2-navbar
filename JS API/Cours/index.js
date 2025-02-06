@@ -30,3 +30,22 @@ fetch("data.txt").then((res) => res.text());
 fetch("data.json")
   .then((res) => res.json())
   .then((data) => console.log(data));
+
+//------------------------------------
+
+const myHeaders = new Headers(); // objet de javascript
+
+const init = {
+  // objet init
+  method: "GET", // = apporte moi des données, correspond à un read dans CRUD
+  headers: myHeaders,
+  mode: "cors", // mode de transmission
+  cache: "default",
+};
+// "CRUD" = create (POST), read (GET), update (PUT), delete (DELETE)
+
+fetch("data.json", init).then((res) => console.log(res));
+
+// exemples BDD : mySQL, MONGOdB
+
+// 58:50

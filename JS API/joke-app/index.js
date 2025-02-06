@@ -9,9 +9,20 @@ const content = document.getElementById("content");
 
 // console.log(header, content);
 
-fetch("https://api.blablagues.net/?rub=blagues")
-  .then((res) => res.json())
-  .then((data) => {
-    header.textContent = data.data.content.text_head;
-    content.textContent = data.data.content.content;
-  });
+function getJoke() {
+  fetch("https://api.blablagues.net/?rub=blagues")
+    .then((res) => res.json())
+    .then((data) => {
+      const joke = data.data.content; // Destructuring
+      header.textContent = joke.text_head;
+      // ternaire
+      content.textContent =
+        joke.text !== ""
+          ? joke.text // correspond à (=== true) si c'est vrai, tu affiches text
+          : joke.text_hidden; // correspond à (=== true) si c'est vrai, tu affiches text_hidden
+    });
+}
+
+document.body.addEventListener("click", () => {
+  getJoke();
+});
